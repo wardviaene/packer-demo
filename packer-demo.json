@@ -1,10 +1,10 @@
 {
   "builders": [{
     "type": "amazon-ebs",
-    "region": "eu-west-1",
-    "source_ami": "ami-09d95fab7fff3776c",
+    "region": "us-east-1",
+    "source_ami": "ami-085925f297f89fce1",
     "instance_type": "t2.nano",
-    "ssh_username": "ec2-user",
+    "ssh_username": "ubuntu",
     "ami_name": "packer-nodejs {{timestamp}}",
     "profile": "terraform"
   }],
