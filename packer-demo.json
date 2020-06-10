@@ -2,7 +2,7 @@
   "builders": [{
     "type": "amazon-ebs",
     "region": "us-east-1",
-    "source_ami": "ami-085925f297f89fce1",
+    "source_ami": "ami-05801d0a3c8e4c443",
     "instance_type": "t2.nano",
     "ssh_username": "ubuntu",
     "ami_name": "packer-nodejs {{timestamp}}",
