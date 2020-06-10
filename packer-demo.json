@@ -1,17 +1,12 @@
 {
-  "variables": {
-    "aws_access_key": "",
-    "aws_secret_key": ""
-  },
   "builders": [{
     "type": "amazon-ebs",
-    "access_key": "{{user `aws_access_key`}}",
-    "secret_key": "{{user `aws_secret_key`}}",
     "region": "eu-west-1",
-    "source_ami": "ami-0964eb2dc8b836eb6",
-    "instance_type": "t2.micro",
-    "ssh_username": "ubuntu",
-    "ami_name": "packer-nodejs-demo {{timestamp}}"
+    "source_ami": "ami-09d95fab7fff3776c",
+    "instance_type": "t2.nano",
+    "ssh_username": "ec2-user",
+    "ami_name": "packer-nodejs {{timestamp}}",
+    "profile": "terraform"
   }],
   "provisioners": [
   {
