@@ -1,7 +1,7 @@
 #!/bin/bash
 set -ex
 
-AWS_REGION="us-east-1"
+AWS_REGION="karan"
 
 ARTIFACT=`packer build -machine-readable packer-demo.json | awk -F, '$0 ~/artifact,0,id/ {print $6}'`
 echo "packer output:"
