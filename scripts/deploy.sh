@@ -8,7 +8,7 @@ useradd -d /app -s /bin/false -g node-demo node-demo
 mv /tmp/app /app
 chown -R node-demo:node-demo /app
 
-echo 'user www-data;
+echo "user www-data;
 worker_processes auto;
 pid /run/nginx.pid;
 
@@ -26,11 +26,11 @@ http {
       proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     }
   }
-}' > /etc/nginx/nginx.conf
+}" >/etc/nginx/nginx.conf
 
 service nginx restart
 
-cd /app
+cd /app || exit
 npm install
 
 echo '[Service]
@@ -44,7 +44,7 @@ Group=node-demo
 Environment=NODE_ENV=production
 
 [Install]
-WantedBy=multi-user.target' > /etc/systemd/system/node-demo.service
+WantedBy=multi-user.target' >/etc/systemd/system/node-demo.service
 
 systemctl enable node-demo
 systemctl start node-demo
